@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.nav-brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.btn-logout {
+    color: #dc3545 !important;
+}
+
+.btn-primary-sm {
+    background: #007bff;
+    color: white !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+}
+
+/* Container */
+.container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+/* Auth Cards & Todo App Card */
+.auth-card, .todo-app-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.auth-card h2, .todo-app-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Form Groups & Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus {
+    border-color: #007bff;
+}
+
+/* Buttons */
+.btn-full {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background 0.2s;
+}
+
+.btn-full:hover {
+    background: #0056b3;
+}
+
+.btn-cancel {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-cancel:hover {
+    text-decoration: underline;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Alerts / Errors */
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    border: 1px solid #f5c6cb;
+}
+
+/* Todo Form & List */
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.todo-form input {
+    flex: 1;
+}
+
+.todo-form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.todo-form button:hover {
+    background: #218838;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed .todo-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.check-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-item.completed .check-btn {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.todo-title {
+    flex: 1;
+    font-size: 1rem;
+    word-break: break-word;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.edit-btn {
+    color: #856404;
+    background-color: #fff3cd;
+}
+.edit-btn:hover {
+    background-color: #ffeeba;
+}
+
+.delete-btn {
+    color: #721c24;
+    background-color: #f8d7da;
+}
+.delete-btn:hover {
+    background-color: #f5c6cb;
+}
+
+.empty-state {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
+}

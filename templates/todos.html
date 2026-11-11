@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}My Todos - TaskManager{% endblock %}
+
+{% block content %}
+<div class="todo-app-card">
+    <h2>My Todo List</h2>
+
+    <!-- Add Todo Form -->
+    <form action="/todos/create" method="POST" class="todo-form">
+        <input type="text" name="title" placeholder="What needs to be done?" required autocomplete="off">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Todo List -->
+    <ul class="todo-list">
+        {% if todos %}
+            {% for todo in todos %}
+            <li class="todo-item {% if todo.completed %}completed{% endif %}">
+                <!-- Checkbox / Toggle -->
+                <form action="/todos/toggle/{{ todo.id }}" method="POST" class="inline-form">
+                    <button type="submit" class="check-btn">
+                        {% if todo.completed %}✓{% else %}○{% endif %}
+                    </button>
+                </form>
+
+                <span class="todo-title">{{ todo.title }}</span>
+
+                <!-- Actions -->
+                <div class="todo-actions">
+                    <a href="/todos/edit/{{ todo.id }}" class="action-btn edit-btn">Edit</a>
+                    <form action="/todos/delete/{{ todo.id }}" method="POST" class="inline-form">
+                        <button type="submit" class="action-btn delete-btn">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        {% else %}
+            <p class="empty-state">No tasks yet! Add one above to get started.</p>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}
